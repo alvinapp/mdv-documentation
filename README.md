@@ -46,11 +46,11 @@
    }
    ```
    
-   ##Customizing styles for mdv components
+   ## Customizing styles for mdv components
    
    Inorder to customize the mdv component styles, we provide a way to customize whereby pass in a css link as a style parameter. This link is should point    to your custom css file. eg something like this:  https://static.staticsave.com/alvin/test.css
    
-   #Procedure to customize
+   # Procedure to customize
    1. Pass in your css link as a parameter see below:
    
       ```
@@ -60,3 +60,6 @@
           myWebView.loadUrl(url)
           
        ```
+    Inside your custom css, you should reference html ids to target various component section and override the styles for example
+      1. Customizing account card
+      
