@@ -45,3 +45,18 @@
     }
    }
    ```
+   
+   ##Customizing styles for mdv components
+   
+   Inorder to customize the mdv component styles, we provide a way to customize whereby pass in a css link as a style parameter. This link is should point    to your custom css file. eg something like this:  https://static.staticsave.com/alvin/test.css
+   
+   #Procedure to customize
+   1. Pass in your css link as a parameter see below:
+   
+      ```
+       val url = Uri.parse("http://52.72.25.150").buildUpon()
+         .appendQueryParameter("styleUrl","https://static.staticsave.com/alvin/test.css")
+         .build().toString()
+          myWebView.loadUrl(url)
+          
+       ```
