@@ -1,4 +1,5 @@
-# MDV DOCUMENTATION
+# MDV Bank Aggregation Documentation
+
 ## A guide on how to integrate the mdv package into your mobile application
 ## Steps:
 
