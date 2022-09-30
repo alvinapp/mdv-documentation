@@ -61,5 +61,67 @@
           
        ```
     Inside your custom css, you should reference html ids to target various component section and override the styles for example
-      1. Customizing account card
+      1. Customizing Account Card
+         
+         # Id's include
+         
+         #al-account-card : ID for the parent div, can be used to customise the background color of the account card.
+         
+         #al-account-card--account-name : Used to customize the style for the account name.
+         
+         #al-account-card--account-balance: Change the style for account balance text.
+         
+         #al-account-card--account-number: Change the style for account number.
+         
+         #al-account-card--account-type: Change the style for account type.
+         
+         Example of how you can customize account card
+         
+         ```
+         css
+         
+         #al-account-card{
+            background:#FFFF00;
+         }
+         
+         #al-account-card--account-balance{
+            color: #000000;
+            font-size: 16px;
+            font: 1.2em "Fira Sans", sans-serif;
+         }
+         
+         ```
+      2. Customize Transaction Card
+      
+         # Id's include
+         
+         #al-transaction-card : ID for the parent div, can be used to customise the background color of the transaction card.
+         
+         #al-transaction-card--merchant-name : Used to customize the style for the transaction merchant name.
+         
+         #al-transaction-card--category-name: Change the style for the transaction category name.
+         
+         #al-transaction-card--date: Change the style for transaction date.
+         
+         #al-transaction-card--amount: Change the style for account.
+         
+         Example of how you can customize account card
+         
+         ```
+         css
+         
+         #al-account-card{
+            background:#FFFF00;
+         }
+         
+         #al-account-card--account-balance{
+            color: #000000;
+            font-size: 16px;
+            font: 1.2em "Fira Sans", sans-serif;
+         }
+         
+         ```
+         
+         
+         
       
