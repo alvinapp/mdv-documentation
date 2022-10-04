@@ -171,9 +171,8 @@
 
       For reference, this code snippet below shows how to pass all MDV parameters from the Android app side.
 
-
-           ```
-           class MainActivity : AppCompatActivity() {
+     ```
+        class MainActivity : AppCompatActivity() {
 
              override fun onCreate(savedInstanceState: Bundle?) {
                  super.onCreate(savedInstanceState)
@@ -201,9 +200,8 @@
                      .build().toString()
                  myWebView.loadUrl(url)
              }
-         }
-
-         ```
+          }
+     ```
 
 
    
