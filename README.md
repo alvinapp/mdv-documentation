@@ -47,11 +47,11 @@
    }
    ```
    
-   ## Customizing styles for mdv components
+   # Customizing styles for mdv components
    
    Inorder to customize the mdv component styles, we provide a way to customize whereby pass in a css link as a style parameter. This link is should point    to your custom css file. eg something like this:  https://static.staticsave.com/alvin/test.css
    
-   # Procedure to customize
+   ## Procedure to customize
    
    1. Pass in your css link as a parameter see below:
    
@@ -151,10 +151,59 @@
          }
 
          ```
-            
          
-         
-         
-         
-         
+    # Display specific components on overview screen
+    
+      We are able to hide or display various components such as the balance view, transaction view or account card view in the home/overview page of the         MDV widget.
+      To achieve this we have to pass in the settings inform of parameters as follows.
       
+      ```
+      
+       .appendQueryParameter("settings","{\"balanceView\":true,\"cardView\":true,\"transactionsView\":true}")
+       
+      ```  
+      
+     If you change for example balanceView to 'false', this will hide the balanceView i.e
+     "{\"balanceView\":false,\"cardView\":true,\"transactionsView\":true}"
+
+      you can disable the other views by passing a true or false value to the settings.
+
+
+      For reference, this code snippet below shows how to pass all MDV parameters from the Android app side.
+
+
+           ```
+           class MainActivity : AppCompatActivity() {
+
+             override fun onCreate(savedInstanceState: Bundle?) {
+                 super.onCreate(savedInstanceState)
+                 setContentView(R.layout.activity_main)
+
+                 val myWebView = findViewById<View>(R.id.mdv_web_view) as WebView
+                 myWebView.webChromeClient = object : WebChromeClient() {
+                     override fun onConsoleMessage(message: ConsoleMessage): Boolean {
+                         Log.d(
+                             "SampleApp", "${message.message()} -- From line " +
+                                     "${message.lineNumber()} of ${message.sourceId()}"
+                         )
+                         return true
+                     }
+                 }
+                 val webSettings = myWebView.settings
+                 webSettings.javaScriptEnabled = true
+                 webSettings.loadWithOverviewMode = true
+                 webSettings.useWideViewPort = true
+                 val url = Uri.parse("http://192.168.0.101:8080").buildUpon()
+                     .appendQueryParameter("publicKey", "D_TMq5gKXkTa49KpI_rW7EGhDM79BSgP5zyw78U9TMc")
+                     .appendQueryParameter("email", "brian.ryb.okuku@gmail.com")
+                     .appendQueryParameter("settings","{\"balanceView\":true,\"cardView\":true,\"transactionsView\":true}")
+                     .appendQueryParameter("styleUrl","")
+                     .build().toString()
+                 myWebView.loadUrl(url)
+             }
+         }
+
+         ```
+
+
+   
