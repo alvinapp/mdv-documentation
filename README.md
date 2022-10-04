@@ -52,6 +52,7 @@
    Inorder to customize the mdv component styles, we provide a way to customize whereby pass in a css link as a style parameter. This link is should point    to your custom css file. eg something like this:  https://static.staticsave.com/alvin/test.css
    
    # Procedure to customize
+   
    1. Pass in your css link as a parameter see below:
    
       ```
@@ -61,7 +62,9 @@
           myWebView.loadUrl(url)
           
        ```
+       
     Inside your custom css, you should reference html ids to target various component section and override the styles for example
+    
       1. Customizing Account Card
          
          # Id's include
@@ -94,7 +97,7 @@
          ```
       2. Customize Transaction Card
       
-         # Id's include
+         # Id's include:
          
          #al-transaction-card : ID for the parent div, can be used to customise the background color of the transaction card.
          
@@ -104,24 +107,53 @@
          
          #al-transaction-card--date: Change the style for transaction date.
          
-         #al-transaction-card--amount: Change the style for account.
+         #al-transaction-card--amount: Change the style for transaction amount.
          
-         Example of how you can customize account card
+         Example of how you can customize transaction card
          
          ```
          css
          
-         #al-account-card{
+         #al-transaction-card{
             background:#FFFF00;
          }
          
-         #al-account-card--account-balance{
+         #al-transaction-card--amount{
             color: #000000;
             font-size: 16px;
             font: 1.2em "Fira Sans", sans-serif;
          }
          
          ```
+         
+      3. Customize the balance view section
+
+         # Id's include:
+
+         #al-balance-view : ID for the parent div, can be used to customise the background color of the balance view section.
+
+         #al-balance-title : Used to customize the style for balance view title.
+         #al-balance-amount : Used to customize the style for balance view amount.
+
+         Example of how you can customize balcance view section
+
+         ```
+         css
+
+         #al-balance-view{
+            background:#FFFF00;
+         }
+
+         #al-balance-amount{
+            color: #000000;
+            font-size: 16px;
+            font: 1.2em "Fira Sans", sans-serif;
+         }
+
+         ```
+            
+         
+         
          
          
          
